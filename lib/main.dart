@@ -11,8 +11,8 @@ import 'package:http/http.dart' as http;
 
 Future<List<Photo>> fetchPhotos(http.Client client) async {
   final response = await client.get(
-      Uri.parse('https://my-json-server.typicode.com/sslaia/katawaena/photos'));
-  // Uri.parse('https://jsonplaceholder.typicode.com/photos'));
+      // Uri.parse('https://my-json-server.typicode.com/sslaia/katawaena/photos'));
+      Uri.parse('https://jsonplaceholder.typicode.com/photos'));
 
   // Use the compute function to run parsePhotos in a separate isolate.
   return compute(parsePhotos, response.body);
