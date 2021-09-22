@@ -2,7 +2,7 @@
 
 Aplikasi ini merupakan bahan untuk belajar membuat menarik data dari Internet, berdasarkan panduan yang telah ditulis oleh tim Flutter [Parse JSON in the background](https://flutter.dev/docs/cookbook/networking/background-parsing) dan [Fetch data from the internet](https://flutter.dev/docs/cookbook/networking/fetch-data)
 
-Panduan untuk aplikasi ini ada di [Pertemuan 8](https://github.com/sslaia/belajar_flutter/blob/main/pertemuan_8.md)!
+Panduan untuk aplikasi ini ada di [Pertemuan 8](https://github.com/sslaia/belajar_flutter/blob/main/pertemuan_8.md) dan [Pertemuan 9](https://github.com/sslaia/belajar_flutter/blob/main/pertemuan_9.md)!
 
 ## Tujuan
 
