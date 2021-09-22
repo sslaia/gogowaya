@@ -11,8 +11,8 @@ import 'package:http/http.dart' as http;
 
 Future<List<Photo>> fetchPhotos(http.Client client) async {
   final response = await client.get(
-      // Uri.parse('https://my-json-server.typicode.com/sslaia/katawaena/photos'));
-      Uri.parse('https://jsonplaceholder.typicode.com/photos'));
+      Uri.parse('https://my-json-server.typicode.com/sslaia/katawaena/photos'));
+      // Uri.parse('https://jsonplaceholder.typicode.com/photos'));
 
   // Use the compute function to run parsePhotos in a separate isolate.
   return compute(parsePhotos, response.body);
@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const appTitle = 'Menarik data dari Internet';
+    const appTitle = 'Gogowaya';
 
     return const MaterialApp(
       title: appTitle,
@@ -117,17 +117,39 @@ class PhotosList extends StatelessWidget {
               leading: Image.network(photos[index].url, fit: BoxFit.cover, width: 50, height: 50,),
               title: Text(photoId),
               subtitle: Text(photos[index].title),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LayarKedua(foto: photo.url)));
+              },
             ),
           );
         });
-    //   return GridView.builder(
-    //     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-    //       crossAxisCount: 2,
-    //     ),
-    //     itemCount: photos.length,
-    //     itemBuilder: (context, index) {
-    //       return Image.network(photos[index].thumbnailUrl);
-    //     },
-    //   );
+  }
+}
+
+class LayarKedua extends StatelessWidget {
+  const LayarKedua({Key? key, required this.foto}) : super(key: key);
+
+  final String foto;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Foto dari Nias"),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            // Tulis di sini kode untuk pergi ke layar pertama
+            // bila tombol "Kembali ke layar pertama!" ditekan
+            // Within the SecondRoute widget
+            Navigator.pop(context);
+          },
+          child: Image.network(foto),
+        ),
+      ),
+    );
   }
 }
